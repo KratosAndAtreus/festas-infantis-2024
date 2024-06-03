@@ -1,4 +1,5 @@
 using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloItens;
 
 namespace FestasInfantis.WinApp
 {
@@ -6,19 +7,50 @@ namespace FestasInfantis.WinApp
     {
         ControladorBase controlador;
 
+        RepositorioItem repositorioItem;
+
         public static TelaPrincipalForm Instancia { get; private set; }
 
         public TelaPrincipalForm()
         {
             InitializeComponent();
-
             lblTipoCadastro.Text = string.Empty;
             Instancia = this;
+
+            repositorioItem = new RepositorioItem();
         }
 
         public void AtualizarRodape(string texto)
         {
             statusLabelPrincipal.Text = texto;
+        }
+
+        private void itemsMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorItem(repositorioItem);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            controlador.Adicionar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            controlador.Editar();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            controlador.Excluir();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (controlador is IControladorFiltravel controladorFiltravel)
+                controladorFiltravel.Filtrar();
         }
 
         private void ConfigurarTelaPrincipal(ControladorBase controladorSelecionado)
