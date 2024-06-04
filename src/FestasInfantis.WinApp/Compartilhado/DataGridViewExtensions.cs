@@ -32,7 +32,7 @@
         {
             grid.AllowUserToAddRows = false;
             grid.AllowUserToDeleteRows = false;
-
+       
             grid.BorderStyle = BorderStyle.None;
 
             grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
