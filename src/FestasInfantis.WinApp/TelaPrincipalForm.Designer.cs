@@ -77,34 +77,29 @@
             // clientesMenuItem
             // 
             clientesMenuItem.Name = "clientesMenuItem";
-            clientesMenuItem.Size = new Size(135, 24);
+            clientesMenuItem.Size = new Size(180, 24);
             clientesMenuItem.Text = "Clientes";
             clientesMenuItem.Click += clientesMenuItem_Click;
             // 
             // temasMenuItem
             // 
             temasMenuItem.Name = "temasMenuItem";
-            temasMenuItem.Size = new Size(135, 24);
+            temasMenuItem.Size = new Size(180, 24);
             temasMenuItem.Text = "Temas";
+            temasMenuItem.Click += temasMenuItem_Click;
             // 
             // alugueisMenuItem
             // 
             alugueisMenuItem.Name = "alugueisMenuItem";
-            alugueisMenuItem.Size = new Size(135, 24);
+            alugueisMenuItem.Size = new Size(180, 24);
             alugueisMenuItem.Text = "Alugueis";
             // 
             // itemsMenuItem
             // 
             itemsMenuItem.Name = "itemsMenuItem";
-            itemsMenuItem.Size = new Size(135, 24);
+            itemsMenuItem.Size = new Size(180, 24);
             itemsMenuItem.Text = "Itens";
             itemsMenuItem.Click += itemsMenuItem_Click;
-            // 
-            // descontosToolStripMenuItem
-            // 
-            descontosToolStripMenuItem.Name = "descontosToolStripMenuItem";
-            descontosToolStripMenuItem.Size = new Size(90, 24);
-            descontosToolStripMenuItem.Text = "Descontos";
             // 
             // descontosToolStripMenuItem
             // 

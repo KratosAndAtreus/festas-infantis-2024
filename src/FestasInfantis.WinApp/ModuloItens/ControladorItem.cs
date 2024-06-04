@@ -17,7 +17,7 @@ namespace FestasInfantis.WinApp.ModuloItens
             this.repositorioItem = repositorio;
         }
 
-        public override string TipoCadastro { get { return "Contatos"; } }
+        public override string TipoCadastro { get { return "Itens"; } }
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo item"; } }
 

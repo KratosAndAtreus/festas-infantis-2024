@@ -1,35 +1,35 @@
-﻿namespace FestasInfantis.WinApp.ModuloItens
+﻿namespace FestasInfantis.WinApp.ModuloTema
 {
-    public partial class TelaItemForm : Form
+    public partial class TelaTemaForm : Form
     {
-        private Item item;
+        private Tema tema;
 
-        public Item Item
+        public Tema Tema
         {
             set
             {
                 txtId.Text = value.Id.ToString();
-                txtDescricao.Text = value.Descricao;
-                numValor.Value= value.Valor;
+                txtTitulo.Text = value.Titulo;
+                numValor.Value = (decimal)value.Valor;
             }
             get
             {
-                return item;
+                return tema;
             }
         }
-        public TelaItemForm()
+        public TelaTemaForm()
         {
             InitializeComponent();
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            string descrição = txtDescricao.Text;
-            decimal valor = numValor.Value;
+            string titulo = txtTitulo.Text;
+            double valor = (double)numValor.Value;
 
-            item = new Item(descrição, valor);
+            tema = new Tema(titulo, valor);
 
-            List<string> erros = item.Validar();
+            List<string> erros = tema.Validar();
 
             if (erros.Count > 0)
             {

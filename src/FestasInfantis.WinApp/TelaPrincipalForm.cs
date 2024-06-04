@@ -1,6 +1,7 @@
 using eAgenda.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloCliente;
 using FestasInfantis.WinApp.ModuloItens;
+using FestasInfantis.WinApp.ModuloTema;
 
 namespace FestasInfantis.WinApp
 {
@@ -9,6 +10,8 @@ namespace FestasInfantis.WinApp
         ControladorBase controlador;
 
         RepositorioCliente repositorioCliente;
+
+        RepositorioTema repositorioTema;
 
         RepositorioItem repositorioItem;
 
@@ -19,9 +22,10 @@ namespace FestasInfantis.WinApp
             InitializeComponent();
             lblTipoCadastro.Text = string.Empty;
 
-            repositorioCliente = new RepositorioCliente();
             Instancia = this;
 
+            repositorioCliente = new RepositorioCliente();
+            repositorioTema = new RepositorioTema();
             repositorioItem = new RepositorioItem();
         }
 
@@ -30,16 +34,23 @@ namespace FestasInfantis.WinApp
             statusLabelPrincipal.Text = texto;
         }
 
-        private void itemsMenuItem_Click(object sender, EventArgs e)
+        private void clientesMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorItem(repositorioItem);
+            controlador = new ControladorCliente(repositorioCliente);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void clientesMenuItem_Click(object sender, EventArgs e)
+        private void temasMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorCliente(repositorioCliente);
+            controlador = new ControladorTema(repositorioTema);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void itemsMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorItem(repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -90,11 +101,11 @@ namespace FestasInfantis.WinApp
 
         private void ConfigurarListagem(ControladorBase controladorSelecionado)
         {
-            UserControl listagemContato = controladorSelecionado.ObterListagem();
-            listagemContato.Dock = DockStyle.Fill;
+            UserControl listagemCliente = controladorSelecionado.ObterListagem();
+            listagemCliente.Dock = DockStyle.Fill;
 
             pnlRegistros.Controls.Clear();
-            pnlRegistros.Controls.Add(listagemContato);
+            pnlRegistros.Controls.Add(listagemCliente);
         }
 
     }
