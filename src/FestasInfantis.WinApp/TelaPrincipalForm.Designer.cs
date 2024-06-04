@@ -98,6 +98,13 @@
             itemsMenuItem.Name = "itemsMenuItem";
             itemsMenuItem.Size = new Size(135, 24);
             itemsMenuItem.Text = "Itens";
+            itemsMenuItem.Click += itemsMenuItem_Click;
+            // 
+            // descontosToolStripMenuItem
+            // 
+            descontosToolStripMenuItem.Name = "descontosToolStripMenuItem";
+            descontosToolStripMenuItem.Size = new Size(90, 24);
+            descontosToolStripMenuItem.Text = "Descontos";
             // 
             // descontosToolStripMenuItem
             // 
@@ -181,6 +188,7 @@
             btnFiltrar.Name = "btnFiltrar";
             btnFiltrar.Padding = new Padding(5);
             btnFiltrar.Size = new Size(38, 38);
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // toolStripSeparator3
             // 
