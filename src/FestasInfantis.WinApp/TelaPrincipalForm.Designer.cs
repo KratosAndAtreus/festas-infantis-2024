@@ -34,7 +34,6 @@
             temasMenuItem = new ToolStripMenuItem();
             alugueisMenuItem = new ToolStripMenuItem();
             itemsMenuItem = new ToolStripMenuItem();
-            descontosToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             statusLabelPrincipal = new ToolStripStatusLabel();
             toolStrip1 = new ToolStrip();
@@ -60,7 +59,7 @@
             // menuStrip1
             // 
             menuStrip1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, descontosToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -100,12 +99,6 @@
             itemsMenuItem.Size = new Size(180, 24);
             itemsMenuItem.Text = "Itens";
             itemsMenuItem.Click += itemsMenuItem_Click;
-            // 
-            // descontosToolStripMenuItem
-            // 
-            descontosToolStripMenuItem.Name = "descontosToolStripMenuItem";
-            descontosToolStripMenuItem.Size = new Size(90, 24);
-            descontosToolStripMenuItem.Text = "Descontos";
             // 
             // statusStrip1
             // 
@@ -308,6 +301,5 @@
         private ToolStripButton btnConfigurarDescontos;
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem itemsMenuItem;
-        private ToolStripMenuItem descontosToolStripMenuItem;
     }
 }
