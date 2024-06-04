@@ -20,7 +20,7 @@ namespace FestasInfantis.WinApp.ModuloItens
             {
                 txtId.Text = value.Id.ToString();
                 txtDescricao.Text = value.Descricao;
-                txtValor.Text = value.Valor.ToString();
+                numValor.Value= value.Valor;
             }
             get
             {
@@ -35,7 +35,7 @@ namespace FestasInfantis.WinApp.ModuloItens
         private void btnGravar_Click(object sender, EventArgs e)
         {
             string descrição = txtDescricao.Text;
-            double valor = Convert.ToDouble(txtValor.Text);
+            decimal valor = numValor.Value;
 
             item = new Item(descrição, valor);
 

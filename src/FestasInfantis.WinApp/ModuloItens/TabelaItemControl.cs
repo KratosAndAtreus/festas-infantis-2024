@@ -43,7 +43,7 @@ namespace FestasInfantis.WinApp.ModuloItens
                         {
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Descrição", HeaderText = "Descrição" },
-                new DataGridViewTextBoxColumn { DataPropertyName = "Valor", HeaderText = "Valor" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Valor", HeaderText = "Valor (R$)" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Tema", HeaderText = "Tema" }
                         };
         }

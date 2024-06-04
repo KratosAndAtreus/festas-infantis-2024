@@ -33,9 +33,10 @@
             label2 = new Label();
             txtDescricao = new TextBox();
             label3 = new Label();
-            txtValor = new TextBox();
             btnGravar = new Button();
             btnCancelar = new Button();
+            numValor = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numValor).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@
             txtId.Location = new Point(102, 37);
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 27);
-            txtId.TabIndex = 1;
+            txtId.TabIndex = 0;
             // 
             // label2
             // 
@@ -85,14 +86,6 @@
             label3.TabIndex = 0;
             label3.Text = "Valor:";
             // 
-            // txtValor
-            // 
-            txtValor.Font = new Font("Segoe UI", 11.25F);
-            txtValor.Location = new Point(102, 103);
-            txtValor.Name = "txtValor";
-            txtValor.Size = new Size(100, 27);
-            txtValor.TabIndex = 1;
-            // 
             // btnGravar
             // 
             btnGravar.DialogResult = DialogResult.OK;
@@ -100,7 +93,7 @@
             btnGravar.Location = new Point(229, 151);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(100, 37);
-            btnGravar.TabIndex = 7;
+            btnGravar.TabIndex = 3;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             btnGravar.Click += btnGravar_Click;
@@ -112,18 +105,26 @@
             btnCancelar.Location = new Point(335, 151);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(100, 37);
-            btnCancelar.TabIndex = 8;
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // numValor
+            // 
+            numValor.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numValor.Location = new Point(102, 104);
+            numValor.Name = "numValor";
+            numValor.Size = new Size(120, 27);
+            numValor.TabIndex = 2;
             // 
             // TelaItemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(453, 196);
+            Controls.Add(numValor);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
-            Controls.Add(txtValor);
             Controls.Add(txtDescricao);
             Controls.Add(txtId);
             Controls.Add(label3);
@@ -135,6 +136,7 @@
             Name = "TelaItemForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "TelaItemForm";
+            ((System.ComponentModel.ISupportInitialize)numValor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,8 +148,8 @@
         private Label label2;
         private TextBox txtDescricao;
         private Label label3;
-        private TextBox txtValor;
         private Button btnGravar;
         private Button btnCancelar;
+        private NumericUpDown numValor;
     }
 }

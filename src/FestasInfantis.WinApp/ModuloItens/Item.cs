@@ -17,10 +17,10 @@ namespace FestasInfantis.WinApp.ModuloItens
     {
         
         public string Descricao { get; set; }
-        public double Valor { get; set; }
+        public decimal Valor { get; set; }
         //public Tema Tema { get; set; }
 
-        public Item(string descricao, double valor/*, string tema*/)
+        public Item(string descricao, decimal valor/*, string tema*/)
         {
             Descricao = descricao;
             Valor = valor;
@@ -42,7 +42,7 @@ namespace FestasInfantis.WinApp.ModuloItens
             if (string.IsNullOrEmpty(Descricao.Trim()))
                 erros.Add("O campo \"descrição\" é obrigatório");
 
-            if (Valor < 1)
+            if (Valor < 0.1m)
                 erros.Add("O campo \"valor\" não pode ser menor que R$1");
 
 

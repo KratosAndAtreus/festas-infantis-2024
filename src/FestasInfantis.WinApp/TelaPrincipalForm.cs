@@ -36,6 +36,7 @@ namespace FestasInfantis.WinApp
 
             ConfigurarTelaPrincipal(controlador);
         }
+
         private void clientesMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorCliente(repositorioCliente);
