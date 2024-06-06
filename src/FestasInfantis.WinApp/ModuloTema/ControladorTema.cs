@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    internal class ControladorTema : ControladorBase
+    public class ControladorTema : ControladorBase
     {
         private RepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTema;
@@ -17,7 +17,7 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             this.repositorioTema = repositorio;
         }
-        public override string TipoCadastro { get { return "Tema"; } }
+        public override string TipoCadastro { get { return "Temas"; } }
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo tema"; } }
 

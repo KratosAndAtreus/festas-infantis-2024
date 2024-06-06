@@ -7,14 +7,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    internal class Tema : EntidadeBase
+    public class Tema : EntidadeBase
     {
         public string Titulo;
-        public double Valor;
+        public double Valor; // por que double???
         public List<Item> itens;
 
         public Tema(string titulo, double valor/*, List<Item> itens*/)
@@ -41,7 +40,7 @@ namespace FestasInfantis.WinApp.ModuloTema
                 erros.Add("O campo \"Título\" é obrigatório");
 
             if (Valor < 1)
-                erros.Add("O campo \"valor\" não pode ser menor que R$1");
+                erros.Add("O campo \"Valor\" não pode ser menor que R$1");
 
             return erros;
         }
