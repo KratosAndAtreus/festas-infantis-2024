@@ -14,13 +14,13 @@ namespace FestasInfantis.WinApp.ModuloTema
     {
         public string Titulo;
         public double Valor; // por que double???
-        public List<Item> itens;
+        public List<Item> itens { get; set; }
 
-        public Tema(string titulo, double valor/*, List<Item> itens*/)
+        public Tema(string titulo, double valor)
         {
             Titulo = titulo;
             Valor = valor;
-            //this.itens = itens;
+            itens = new List<Item>();
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -44,6 +44,17 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return erros;
         }
+
+        //public bool AdicionarItem(Item item)
+        //{
+        //    if (itens.Exists(i => i.Descricao == item.Descricao))
+        //        return false;
+
+        //    item.Descricao = this.ToString();
+        //    itens.Add(item);
+
+        //    return true;
+        //}
 
         public override string ToString()
         {

@@ -20,6 +20,7 @@
         public TelaItemForm()
         {
             InitializeComponent();
+
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
