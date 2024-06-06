@@ -10,7 +10,7 @@
             {
                 txtId.Text = value.Id.ToString();
                 txtTitulo.Text = value.Titulo;
-                numValor.Value = (decimal)value.Valor;
+                numValor.Value = (decimal)value.Valor; // cast necessário
             }
             get
             {

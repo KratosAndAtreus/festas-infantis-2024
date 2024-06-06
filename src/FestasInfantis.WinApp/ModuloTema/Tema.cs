@@ -7,21 +7,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
     public class Tema : EntidadeBase
     {
         public string Titulo;
-        public double Valor;
-        public List<Item> itens;
+        public double Valor; // por que double???
+        public List<Item> itens { get; set; }
 
-        public Tema(string titulo, double valor/*, List<Item> itens*/)
+        public Tema(string titulo, double valor)
         {
             Titulo = titulo;
             Valor = valor;
-            //this.itens = itens;
+            itens = new List<Item>();
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -41,10 +40,21 @@ namespace FestasInfantis.WinApp.ModuloTema
                 erros.Add("O campo \"Título\" é obrigatório");
 
             if (Valor < 1)
-                erros.Add("O campo \"valor\" não pode ser menor que R$1");
+                erros.Add("O campo \"Valor\" não pode ser menor que R$1");
 
             return erros;
         }
+
+        //public bool AdicionarItem(Item item)
+        //{
+        //    if (itens.Exists(i => i.Descricao == item.Descricao))
+        //        return false;
+
+        //    item.Descricao = this.ToString();
+        //    itens.Add(item);
+
+        //    return true;
+        //}
 
         public override string ToString()
         {

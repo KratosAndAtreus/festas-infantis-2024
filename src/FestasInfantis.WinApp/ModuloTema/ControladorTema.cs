@@ -1,4 +1,5 @@
 ﻿using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.Compartilhado;
 using FestasInfantis.WinApp.ModuloItens;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    internal class ControladorTema : ControladorBase
+    public class ControladorTema : ControladorBase // ,IControladorItens
     {
         private RepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTema;
@@ -17,13 +18,15 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             this.repositorioTema = repositorio;
         }
-        public override string TipoCadastro { get { return "Tema"; } }
+        public override string TipoCadastro { get { return "Temas"; } }
 
         public override string ToolTipAdicionar { get { return "Cadastrar um novo tema"; } }
 
         public override string ToolTipEditar { get { return "Editar um tema existente"; } }
 
         public override string ToolTipExcluir { get { return "Excluir um tema existente"; } }
+
+      //  public string ToolTipItens { get { return "Adicionar um item"; } }
 
         public override void Adicionar()
         {
@@ -138,5 +141,23 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return tabelaTema;
         }
+
+        //public void AdicionarItens()
+        //{
+        //    int idSelecionado = tabelaTema.ObterRegistroSelecionado();
+
+        //    Tema temaSelecionado = repositorioTema.SelecionarPorId(idSelecionado);
+
+        //    if(temaSelecionado == null)
+        //    {
+        //            MessageBox.Show("Por favor, selecione um tema",
+        //                "Atenção",
+        //                MessageBoxButtons.OK,
+        //                MessageBoxIcon.Information
+        //                );
+        //            return;  
+        //    }
+     
+        //}
     }
 }
