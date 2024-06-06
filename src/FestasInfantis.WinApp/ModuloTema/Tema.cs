@@ -11,7 +11,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    internal class Tema : EntidadeBase
+    public class Tema : EntidadeBase
     {
         public string Titulo;
         public double Valor;
