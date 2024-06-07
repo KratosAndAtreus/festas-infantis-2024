@@ -22,10 +22,17 @@ namespace FestasInfantis.WinApp.ModuloAlugueis
                 txtId.Text = value.Id.ToString();
                 cmbClientes.SelectedItem = value.Cliente;
                 cmbTema.SelectedItem = value.Tema;
-                cmbPorcentagemEntrada.SelectedItem = value.PorcentagemEntrada;
-                txtPorcentagemDesconto.Text = value.PorcentagemDesconto.ToString();
+                cmbSinal.SelectedItem = value.Sinal;
 
+                dtFesta.Value = value.Festa.Data;
+                mskHoraInicio.Text = value.Festa.HorarioInicio.ToString();
+                mskHoraTermino.Text = value.Festa.HorarioTermino.ToString();
 
+                txtCidade.Text = value.Festa.Endereco.Cidade;
+                txtEstado.Text = value.Festa.Endereco.Estado;
+                txtBairro.Text = value.Festa.Endereco.Bairro;
+                txtRua.Text = value.Festa.Endereco.Rua;
+                txtNumero.Text = value.Festa.Endereco.Numero;
             }
             get
             {

@@ -15,7 +15,9 @@ namespace FestasInfantis.WinApp.ModuloAlugueis
 
         public Tema Tema { get; set; }
 
-        public Enum PorcentagemEntrada { get; set; }
+        public Festa Festa {  get; set; }
+
+        public Enum Sinal { get; set; }
 
         public double PorcentagemDesconto { get; set; }
 
@@ -23,17 +25,15 @@ namespace FestasInfantis.WinApp.ModuloAlugueis
 
         public bool status;
 
-        public string festa;
 
-        public Aluguel(Cliente cliente, Tema tema, Enum porcentagemEntrada, double porcentagemDesconto, DateTime dataPagamento, bool status, string festa)
+        public Aluguel(Cliente cliente, Tema tema, Enum porcentagemEntrada, double porcentagemDesconto, DateTime dataPagamento, bool status)
         {
             Cliente = cliente;
             Tema = tema;
-            PorcentagemEntrada = porcentagemEntrada;
+            Sinal = porcentagemEntrada;
             PorcentagemDesconto = porcentagemDesconto;
             DataPagamento = dataPagamento;
             this.status = status;
-            this.festa = festa;
         }
 
         public override List<string> Validar()
@@ -58,11 +58,11 @@ namespace FestasInfantis.WinApp.ModuloAlugueis
 
             Cliente = aluguel.Cliente;
             Tema = aluguel.Tema;
-            PorcentagemEntrada = aluguel.PorcentagemEntrada;
+            Festa = aluguel.Festa;
+            Sinal = aluguel.Sinal;
             PorcentagemDesconto = aluguel.PorcentagemDesconto;
             DataPagamento = aluguel.DataPagamento;
             status = aluguel.status;
-            festa = aluguel.festa;
         }
 
         public override string ToString()
