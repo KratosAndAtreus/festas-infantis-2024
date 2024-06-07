@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaTemaForm));
             label1 = new Label();
             txtId = new TextBox();
             label2 = new Label();
@@ -180,6 +181,7 @@
             Controls.Add(tabCadastroItens);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TelaTemaForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastrar tema";
