@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaClienteForm));
             lblId = new Label();
             lblNome = new Label();
             lblTelefone = new Label();
@@ -147,6 +148,7 @@
             Controls.Add(lblTelefone);
             Controls.Add(lblNome);
             Controls.Add(lblId);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TelaClienteForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastrar Cliente";

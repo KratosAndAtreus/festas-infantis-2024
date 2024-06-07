@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaAluguelForm));
             cmbClientes = new ComboBox();
             label1 = new Label();
             txtId = new TextBox();
@@ -43,17 +44,17 @@
             groupBox1 = new GroupBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            groupBox3 = new GroupBox();
             tabPage2 = new TabPage();
             groupBox2 = new GroupBox();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            textBox2 = new TextBox();
-            label7 = new Label();
-            textBox3 = new TextBox();
-            label8 = new Label();
-            textBox4 = new TextBox();
             label9 = new Label();
-            groupBox3 = new GroupBox();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -213,6 +214,15 @@
             tabPage1.Text = "Dados da Festa";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            groupBox3.Location = new Point(6, 163);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(674, 108);
+            groupBox3.TabIndex = 10;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Dados do Endereço:";
+            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(groupBox2);
@@ -222,10 +232,10 @@
             tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(cmbPorcentagemEntrada);
             tabPage2.Controls.Add(label4);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(686, 267);
+            tabPage2.Size = new Size(686, 331);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Dados do Aluguel";
             tabPage2.UseVisualStyleBackColor = true;
@@ -249,34 +259,23 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
             // 
-            // textBox1
+            // label9
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(124, 53);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(69, 27);
-            textBox1.TabIndex = 7;
-            textBox1.Text = "0";
+            label9.AutoSize = true;
+            label9.Location = new Point(202, 89);
+            label9.Name = "label9";
+            label9.Size = new Size(112, 20);
+            label9.TabIndex = 6;
+            label9.Text = "% de Desconto:";
             // 
-            // label6
+            // label8
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 56);
-            label6.Name = "label6";
-            label6.Size = new Size(112, 20);
-            label6.TabIndex = 6;
-            label6.Text = "% de Desconto:";
-            // 
-            // textBox2
-            // 
-            textBox2.Enabled = false;
-            textBox2.Location = new Point(124, 86);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(69, 27);
-            textBox2.TabIndex = 7;
-            textBox2.Text = "0";
+            label8.AutoSize = true;
+            label8.Location = new Point(202, 56);
+            label8.Name = "label8";
+            label8.Size = new Size(112, 20);
+            label8.TabIndex = 6;
+            label8.Text = "% de Desconto:";
             // 
             // label7
             // 
@@ -287,24 +286,14 @@
             label7.TabIndex = 6;
             label7.Text = "% de Desconto:";
             // 
-            // textBox3
+            // label6
             // 
-            textBox3.Enabled = false;
-            textBox3.Location = new Point(320, 53);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(69, 27);
-            textBox3.TabIndex = 7;
-            textBox3.Text = "0";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(202, 56);
-            label8.Name = "label8";
-            label8.Size = new Size(112, 20);
-            label8.TabIndex = 6;
-            label8.Text = "% de Desconto:";
+            label6.AutoSize = true;
+            label6.Location = new Point(6, 56);
+            label6.Name = "label6";
+            label6.Size = new Size(112, 20);
+            label6.TabIndex = 6;
+            label6.Text = "% de Desconto:";
             // 
             // textBox4
             // 
@@ -316,23 +305,35 @@
             textBox4.TabIndex = 7;
             textBox4.Text = "0";
             // 
-            // label9
+            // textBox3
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(202, 89);
-            label9.Name = "label9";
-            label9.Size = new Size(112, 20);
-            label9.TabIndex = 6;
-            label9.Text = "% de Desconto:";
+            textBox3.Enabled = false;
+            textBox3.Location = new Point(320, 53);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(69, 27);
+            textBox3.TabIndex = 7;
+            textBox3.Text = "0";
             // 
-            // groupBox3
+            // textBox2
             // 
-            groupBox3.Location = new Point(6, 163);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(674, 108);
-            groupBox3.TabIndex = 10;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Dados do Endereço:";
+            textBox2.Enabled = false;
+            textBox2.Location = new Point(124, 86);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(69, 27);
+            textBox2.TabIndex = 7;
+            textBox2.Text = "0";
+            // 
+            // textBox1
+            // 
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(124, 53);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(69, 27);
+            textBox1.TabIndex = 7;
+            textBox1.Text = "0";
             // 
             // TelaAluguelForm
             // 
@@ -345,11 +346,11 @@
             Controls.Add(txtId);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "TelaAluguelForm";
-            ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "TelaAluguelForm";
             tabControl1.ResumeLayout(false);
