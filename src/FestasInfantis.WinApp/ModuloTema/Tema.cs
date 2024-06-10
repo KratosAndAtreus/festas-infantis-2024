@@ -13,14 +13,14 @@ namespace FestasInfantis.WinApp.ModuloTema
     public class Tema : EntidadeBase
     {
         public string Titulo;
-        public double Valor; // por que double???
+        public double Valor;
         public List<Item> itens { get; set; }
 
         public Tema(string titulo, double valor)
         {
             Titulo = titulo;
             Valor = valor;
-            itens = new List<Item>();
+           // itens = new List<Item>();
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -29,7 +29,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             Titulo = atualizado.Titulo;
             Valor = atualizado.Valor;
-            this.itens = atualizado.itens;
+            //this.itens = atualizado.itens;
         }
 
         public override List<string> Validar()
@@ -44,17 +44,6 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             return erros;
         }
-
-        //public bool AdicionarItem(Item item)
-        //{
-        //    if (itens.Exists(i => i.Descricao == item.Descricao))
-        //        return false;
-
-        //    item.Descricao = this.ToString();
-        //    itens.Add(item);
-
-        //    return true;
-        //}
 
         public override string ToString()
         {

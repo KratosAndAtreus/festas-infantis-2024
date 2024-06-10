@@ -40,7 +40,7 @@
             tabCadastroItens = new TabControl();
             tabCadastroBasico = new TabPage();
             tabPage2 = new TabPage();
-            listBox1 = new ListBox();
+            listBoxItens = new CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)numValor).BeginInit();
             tabCadastroItens.SuspendLayout();
             tabCadastroBasico.SuspendLayout();
@@ -154,7 +154,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(listBox1);
+            tabPage2.Controls.Add(listBoxItens);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -163,15 +163,14 @@
             tabPage2.Text = "Cadastro de itens";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // listBoxItens
             // 
-            listBox1.Dock = DockStyle.Fill;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(3, 3);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(499, 368);
-            listBox1.TabIndex = 0;
+            listBoxItens.Dock = DockStyle.Fill;
+            listBoxItens.FormattingEnabled = true;
+            listBoxItens.Location = new Point(3, 3);
+            listBoxItens.Name = "listBoxItens";
+            listBoxItens.Size = new Size(499, 368);
+            listBoxItens.TabIndex = 0;
             // 
             // TelaTemaForm
             // 
@@ -206,6 +205,6 @@
         private TabControl tabCadastroItens;
         private TabPage tabCadastroBasico;
         private TabPage tabPage2;
-        private ListBox listBox1;
+        private CheckedListBox listBoxItens;
     }
 }

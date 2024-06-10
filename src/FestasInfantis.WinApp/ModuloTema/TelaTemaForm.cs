@@ -1,4 +1,6 @@
-﻿namespace FestasInfantis.WinApp.ModuloTema
+﻿using FestasInfantis.WinApp.ModuloItens;
+
+namespace FestasInfantis.WinApp.ModuloTema
 {
     public partial class TelaTemaForm : Form
     {
@@ -20,6 +22,27 @@
         public TelaTemaForm()
         {
             InitializeComponent();
+
+        }
+
+        public void ConfigurarTela (Tema tema)
+        {
+            this.Tema = tema;
+
+            txtId.Text = tema.Id.ToString();
+
+            txtTitulo.Text = tema.Titulo;
+
+            int i = 0;
+
+            for (int j = 0; j < listBoxItens.Items.Count; j++)
+            {
+                Item item = (Item)listBoxItens.Items[j];
+
+                listBoxItens.SetItemChecked(i, true);
+
+                i++;
+            }
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
