@@ -13,14 +13,50 @@ namespace FestasInfantis.WinApp.ModuloTema
     public class Tema : EntidadeBase
     {
         public string Titulo;
-        public double Valor;
-        public List<Item> itens { get; set; }
+        public List<Item> itens { get; set; } = new List<Item>();
+        public decimal Valor 
+        {
+            get
+            { 
+                decimal valor = 0;
 
-        public Tema(string titulo, double valor)
+                foreach (Item i in itens)
+                    valor += i.Valor;
+
+                    return valor;
+                
+            } 
+        }
+
+        public Tema() { }
+
+        public Tema(string titulo)
         {
             Titulo = titulo;
-            Valor = valor;
-           // itens = new List<Item>();
+        }
+
+        public bool AdicionarItem(Item item)
+        {
+            if (itens.Contains(item))
+                return false;
+
+            itens.Add(item);
+
+            item.AtribuirTema(this);
+
+            return true;
+        }
+
+        public bool RemoverItem(Item item)
+        {
+            if(!itens.Contains(item))
+                return false ;
+
+            itens.Remove(item);
+
+            item.RemoverTema();
+
+            return true;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
@@ -28,8 +64,6 @@ namespace FestasInfantis.WinApp.ModuloTema
             Tema atualizado = (Tema)novoRegistro;
 
             Titulo = atualizado.Titulo;
-            Valor = atualizado.Valor;
-            //this.itens = atualizado.itens;
         }
 
         public override List<string> Validar()
@@ -38,9 +72,6 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             if (string.IsNullOrEmpty(Titulo.Trim()))
                 erros.Add("O campo \"Título\" é obrigatório");
-
-            if (Valor < 1)
-                erros.Add("O campo \"Valor\" não pode ser menor que R$1");
 
             return erros;
         }

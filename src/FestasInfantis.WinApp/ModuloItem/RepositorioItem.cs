@@ -1,4 +1,5 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloTema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloItens
 {
-    internal class RepositorioItem : RepositorioBase<Item>
+    public class RepositorioItem : RepositorioBase<Item>
     {
+        public List<Item> SelecionarItensDisponiveis()
+        {
+            return registros.Where(i => i.Tema == null).ToList();
+        }
     }
 }

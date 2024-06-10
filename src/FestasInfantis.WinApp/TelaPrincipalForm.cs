@@ -43,7 +43,7 @@ namespace FestasInfantis.WinApp
 
         private void temasMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema(repositorioTema);
+            controlador = new ControladorTema(repositorioTema,repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
         }

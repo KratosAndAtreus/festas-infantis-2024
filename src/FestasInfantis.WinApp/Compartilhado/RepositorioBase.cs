@@ -25,7 +25,7 @@
             return true;
         }
 
-        public bool Excluir(int id)
+       virtual public bool Excluir(int id)
         {
             return registros.Remove(SelecionarPorId(id));
         }

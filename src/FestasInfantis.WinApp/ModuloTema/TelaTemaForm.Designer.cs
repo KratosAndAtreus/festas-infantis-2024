@@ -33,15 +33,12 @@
             txtId = new TextBox();
             label2 = new Label();
             txtTitulo = new TextBox();
-            label3 = new Label();
             btnGravar = new Button();
             btnCancelar = new Button();
-            numValor = new NumericUpDown();
             tabCadastroItens = new TabControl();
             tabCadastroBasico = new TabPage();
             tabPage2 = new TabPage();
             listBoxItens = new CheckedListBox();
-            ((System.ComponentModel.ISupportInitialize)numValor).BeginInit();
             tabCadastroItens.SuspendLayout();
             tabCadastroBasico.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -85,21 +82,11 @@
             txtTitulo.Size = new Size(230, 27);
             txtTitulo.TabIndex = 1;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F);
-            label3.Location = new Point(36, 148);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Valor: ";
-            // 
             // btnGravar
             // 
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Font = new Font("Segoe UI", 11.25F);
-            btnGravar.Location = new Point(319, 420);
+            btnGravar.Location = new Point(315, 293);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(100, 37);
             btnGravar.TabIndex = 5;
@@ -111,20 +98,12 @@
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Font = new Font("Segoe UI", 11.25F);
-            btnCancelar.Location = new Point(425, 420);
+            btnCancelar.Location = new Point(421, 293);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(100, 37);
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // numValor
-            // 
-            numValor.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numValor.Location = new Point(102, 141);
-            numValor.Name = "numValor";
-            numValor.Size = new Size(120, 27);
-            numValor.TabIndex = 7;
             // 
             // tabCadastroItens
             // 
@@ -133,21 +112,19 @@
             tabCadastroItens.Location = new Point(12, 12);
             tabCadastroItens.Name = "tabCadastroItens";
             tabCadastroItens.SelectedIndex = 0;
-            tabCadastroItens.Size = new Size(513, 402);
+            tabCadastroItens.Size = new Size(513, 275);
             tabCadastroItens.TabIndex = 8;
             // 
             // tabCadastroBasico
             // 
             tabCadastroBasico.Controls.Add(txtId);
             tabCadastroBasico.Controls.Add(txtTitulo);
-            tabCadastroBasico.Controls.Add(numValor);
             tabCadastroBasico.Controls.Add(label2);
-            tabCadastroBasico.Controls.Add(label3);
             tabCadastroBasico.Controls.Add(label1);
             tabCadastroBasico.Location = new Point(4, 24);
             tabCadastroBasico.Name = "tabCadastroBasico";
             tabCadastroBasico.Padding = new Padding(3);
-            tabCadastroBasico.Size = new Size(505, 374);
+            tabCadastroBasico.Size = new Size(505, 247);
             tabCadastroBasico.TabIndex = 0;
             tabCadastroBasico.Text = "Cadastro Basico";
             tabCadastroBasico.UseVisualStyleBackColor = true;
@@ -158,7 +135,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(505, 374);
+            tabPage2.Size = new Size(505, 247);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Cadastro de itens";
             tabPage2.UseVisualStyleBackColor = true;
@@ -169,14 +146,14 @@
             listBoxItens.FormattingEnabled = true;
             listBoxItens.Location = new Point(3, 3);
             listBoxItens.Name = "listBoxItens";
-            listBoxItens.Size = new Size(499, 368);
+            listBoxItens.Size = new Size(499, 241);
             listBoxItens.TabIndex = 0;
             // 
             // TelaTemaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(537, 469);
+            ClientSize = new Size(537, 338);
             Controls.Add(tabCadastroItens);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
@@ -184,7 +161,6 @@
             Name = "TelaTemaForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastrar tema";
-            ((System.ComponentModel.ISupportInitialize)numValor).EndInit();
             tabCadastroItens.ResumeLayout(false);
             tabCadastroBasico.ResumeLayout(false);
             tabCadastroBasico.PerformLayout();
@@ -198,10 +174,8 @@
         private TextBox txtId;
         private Label label2;
         private TextBox txtTitulo;
-        private Label label3;
         private Button btnGravar;
         private Button btnCancelar;
-        private NumericUpDown numValor;
         private TabControl tabCadastroItens;
         private TabPage tabCadastroBasico;
         private TabPage tabPage2;

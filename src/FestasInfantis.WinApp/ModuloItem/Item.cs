@@ -1,5 +1,6 @@
 ﻿using eAgenda.ConsoleApp.Compartilhado;
 using FestasInfantis.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloTema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +18,32 @@ namespace FestasInfantis.WinApp.ModuloItens
         
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
-        //public Tema Tema { get; set; }
+        public Tema Tema { get; set; }
 
-        public Item(string descricao, decimal valor/*, string tema*/)
+        public Item(string descricao, decimal valor)
         {
             Descricao = descricao;
             Valor = valor;
-            //this.Tema = tema;
+        }
+
+        public bool AtribuirTema(Tema tema)
+        {
+            if(Tema != null)
+                return false;
+
+            Tema = tema;
+
+            return true;
+        }
+
+        public bool RemoverTema()
+        {
+            if( Tema == null)
+                return false;
+
+            Tema = null;
+
+            return true;
         }
 
         public override void AtualizarRegistro(EntidadeBase novoRegistro)

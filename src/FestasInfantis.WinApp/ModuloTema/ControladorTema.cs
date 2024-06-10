@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloTema
 {
-    public class ControladorTema : ControladorBase // ,IControladorItens
+    public class ControladorTema : ControladorBase
     {
         private RepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTema;
         private RepositorioItem repositorioItem;
 
-        public ControladorTema(RepositorioTema repositorio)
+        public ControladorTema(RepositorioTema repositorio,RepositorioItem repositorioItem)
         {
             this.repositorioTema = repositorio;
             this.repositorioItem = repositorioItem;
@@ -32,6 +32,10 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             TelaTemaForm telaTema = new TelaTemaForm();
 
+            List<Item> itensDisponiveis = repositorioItem.SelecionarItensDisponiveis();
+
+            telaTema.CarregarItens(itensDisponiveis);
+
             DialogResult resultado = telaTema.ShowDialog();
 
             if (resultado != DialogResult.OK)
@@ -42,7 +46,9 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             repositorioTema.Cadastrar(novoTema);
 
-            CarregarItens();
+            repositorioTema.AdicionarItens(novoTema, telaTema.itensMarcados);
+
+            CarregarTemas();
 
             TelaPrincipalForm
                 .Instancia
@@ -81,7 +87,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             repositorioTema.Editar(temaSelecionado.Id, temaEditado);
 
-            CarregarItens();
+            CarregarTemas();
 
             TelaPrincipalForm
                 .Instancia
@@ -118,14 +124,14 @@ namespace FestasInfantis.WinApp.ModuloTema
 
             repositorioTema.Excluir(temaSelecionado.Id);
 
-            CarregarItens();
+            CarregarTemas();
 
             TelaPrincipalForm
                 .Instancia
                 .AtualizarRodape($"O registro\"{temaSelecionado.Titulo}\" foi excluído com sucesso!");
         }
 
-        private void CarregarItens()
+        private void CarregarTemas()
         {
             List<Tema> temas = repositorioTema.SelecionarTodos();
 
@@ -137,7 +143,7 @@ namespace FestasInfantis.WinApp.ModuloTema
             if (tabelaTema == null)
                 tabelaTema = new TabelaTemaControl();
 
-            CarregarItens();
+            CarregarTemas();
 
             return tabelaTema;
         }

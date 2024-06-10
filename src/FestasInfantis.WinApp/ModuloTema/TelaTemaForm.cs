@@ -12,7 +12,7 @@ namespace FestasInfantis.WinApp.ModuloTema
             {
                 txtId.Text = value.Id.ToString();
                 txtTitulo.Text = value.Titulo;
-                numValor.Value = (decimal)value.Valor; // cast necessário
+               
             }
             get
             {
@@ -23,6 +23,25 @@ namespace FestasInfantis.WinApp.ModuloTema
         {
             InitializeComponent();
 
+        }
+
+        public List<Item> itensMarcados
+        {
+            get
+            {
+                return listBoxItens
+                    .CheckedItems
+                    .Cast<Item>()
+                    .ToList();
+            }
+        }
+
+        public void CarregarItens(List<Item> items) 
+        {
+            foreach (Item i in items)
+            {
+                listBoxItens.Items.Add(i);
+            }
         }
 
         public void ConfigurarTela (Tema tema)
@@ -48,9 +67,8 @@ namespace FestasInfantis.WinApp.ModuloTema
         private void btnGravar_Click(object sender, EventArgs e)
         {
             string titulo = txtTitulo.Text;
-            double valor = (double)numValor.Value;
 
-            tema = new Tema(titulo, valor);
+            tema = new Tema(titulo);
 
             List<string> erros = tema.Validar();
 
