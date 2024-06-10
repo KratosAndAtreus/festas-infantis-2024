@@ -13,10 +13,12 @@ namespace FestasInfantis.WinApp.ModuloTema
     {
         private RepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTema;
+        private RepositorioItem repositorioItem;
 
         public ControladorTema(RepositorioTema repositorio)
         {
             this.repositorioTema = repositorio;
+            this.repositorioItem = repositorioItem;
         }
         public override string TipoCadastro { get { return "Temas"; } }
 
@@ -26,15 +28,12 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         public override string ToolTipExcluir { get { return "Excluir um tema existente"; } }
 
-      //  public string ToolTipItens { get { return "Adicionar um item"; } }
-
         public override void Adicionar()
         {
             TelaTemaForm telaTema = new TelaTemaForm();
 
             DialogResult resultado = telaTema.ShowDialog();
 
-            //fazer o if em direção ao erro(ou seja em caso de erro)
             if (resultado != DialogResult.OK)
                 return;
 
@@ -52,6 +51,7 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         public override void Editar()
         {
+            
             TelaTemaForm telaTema = new TelaTemaForm();
 
             int idSelecionado = tabelaTema.ObterRegistroSelecionado();
@@ -142,22 +142,5 @@ namespace FestasInfantis.WinApp.ModuloTema
             return tabelaTema;
         }
 
-        //public void AdicionarItens()
-        //{
-        //    int idSelecionado = tabelaTema.ObterRegistroSelecionado();
-
-        //    Tema temaSelecionado = repositorioTema.SelecionarPorId(idSelecionado);
-
-        //    if(temaSelecionado == null)
-        //    {
-        //            MessageBox.Show("Por favor, selecione um tema",
-        //                "Atenção",
-        //                MessageBoxButtons.OK,
-        //                MessageBoxIcon.Information
-        //                );
-        //            return;  
-        //    }
-     
-        //}
     }
 }
