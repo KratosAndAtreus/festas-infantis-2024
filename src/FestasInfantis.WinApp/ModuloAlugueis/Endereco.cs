@@ -19,20 +19,15 @@ namespace FestasInfantis.WinApp.ModuloAlugueis
 
         public Endereco()
         {
-            Rua = null;
-            Numero = null;
-            Cidade = null;
-            Estado = null;
-            Bairro = null;
         }
 
-        public Endereco(string rua, string numero, string cidade, string estado, string cep)
+        public Endereco(string rua, string numero, string cidade, string estado, string bairro)
         {
             Rua = rua;
             Numero = numero;
             Cidade = cidade;
             Estado = estado;
-            Bairro = cep;
+            Bairro = bairro;
         }
 
         public List<string> Validar()

@@ -396,10 +396,10 @@
             tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(cmbSinal);
             tabPage2.Controls.Add(label4);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(686, 331);
+            tabPage2.Size = new Size(686, 326);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Dados do Aluguel";
             tabPage2.UseVisualStyleBackColor = true;
@@ -421,7 +421,7 @@
             groupBox2.Size = new Size(673, 149);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
-            groupBox2.Text = "groupBox2";
+            groupBox2.Text = "Dados de Pagamento:";
             // 
             // label9
             // 
