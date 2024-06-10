@@ -17,31 +17,30 @@ namespace FestasInfantis.WinApp.ModuloAlugueis
 
         public Festa Festa {  get; set; }
 
-        public Enum Sinal { get; set; }
+        public ValorSinalEnum Sinal { get; set; }
 
         public double PorcentagemDesconto { get; set; }
 
         public DateTime DataPagamento { get; set; }
 
-        public bool status;
+        public bool EstaAlugado { get; set; } = true;
 
 
-        public Aluguel(Cliente cliente, Tema tema, Enum porcentagemEntrada, double porcentagemDesconto, DateTime dataPagamento, bool status)
-        {
+        public Aluguel(Cliente cliente, Tema tema, ValorSinalEnum porcentagemEntrada, Festa festa/*, double porcentagemDesconto*/)
+        { 
             Cliente = cliente;
             Tema = tema;
             Sinal = porcentagemEntrada;
-            PorcentagemDesconto = porcentagemDesconto;
-            DataPagamento = dataPagamento;
-            this.status = status;
+            Festa = festa;
+            //PorcentagemDesconto = porcentagemDesconto;
         }
 
         public override List<string> Validar()
         {
             List<string> erros = new List<string>();
 
-            //if (string.IsNullOrEmpty(Cliente.Trim()))
-            //    erros.Add("O campo \"nome\" é obrigatório");
+            if (Cliente == null)
+                erros.Add("O campo \"Cliente\" é obrigatório");
 
             //if (string.IsNullOrEmpty(CPF.Trim()))
             //    erros.Add("O Campo \"CPF\" é obrigatório");
@@ -62,7 +61,7 @@ namespace FestasInfantis.WinApp.ModuloAlugueis
             Sinal = aluguel.Sinal;
             PorcentagemDesconto = aluguel.PorcentagemDesconto;
             DataPagamento = aluguel.DataPagamento;
-            status = aluguel.status;
+            EstaAlugado = aluguel.EstaAlugado;
         }
 
         public override string ToString()

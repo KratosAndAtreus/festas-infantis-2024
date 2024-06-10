@@ -1,4 +1,5 @@
 using eAgenda.WinApp.Compartilhado;
+using FestasInfantis.WinApp.ModuloAlugueis;
 using FestasInfantis.WinApp.ModuloCliente;
 using FestasInfantis.WinApp.ModuloItens;
 using FestasInfantis.WinApp.ModuloTema;
@@ -12,6 +13,8 @@ namespace FestasInfantis.WinApp
         RepositorioCliente repositorioCliente;
 
         RepositorioTema repositorioTema;
+
+        RepositorioAluguel repositorioAluguel;
 
         RepositorioItem repositorioItem;
 
@@ -27,6 +30,7 @@ namespace FestasInfantis.WinApp
             repositorioCliente = new RepositorioCliente();
             repositorioTema = new RepositorioTema();
             repositorioItem = new RepositorioItem();
+            repositorioAluguel = new RepositorioAluguel();
         }
 
         public void AtualizarRodape(string texto)
@@ -46,6 +50,13 @@ namespace FestasInfantis.WinApp
             controlador = new ControladorTema(repositorioTema,repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
+        }
+        private void alugueisMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorAluguel(repositorioAluguel, repositorioTema, repositorioCliente);
+
+            ConfigurarTelaPrincipal(controlador);   
+
         }
 
         private void itemsMenuItem_Click(object sender, EventArgs e)

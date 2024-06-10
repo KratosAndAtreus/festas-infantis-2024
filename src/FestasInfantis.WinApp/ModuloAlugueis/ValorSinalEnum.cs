@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FestasInfantis.WinApp.ModuloAlugueis
 {
-    internal enum ValorSinalEnum
+    public enum ValorSinalEnum
     {
         Sinal40 = 40,
         Sinal50 = 50
