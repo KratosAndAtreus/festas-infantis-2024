@@ -33,5 +33,17 @@ namespace FestasInfantis.WinApp.ModuloTema
                 novoTema.AdicionarItem(item);
             }
         }
+
+        public void AdicionarItens(Tema temaSelecionado,Tema temaEditado, List<Item> itensMarcados, List<Item> itensDesmarcados)
+        {
+            foreach (Item i in itensDesmarcados)
+                temaEditado.RemoverItem(i);
+
+            foreach (Item i in itensMarcados)
+                temaEditado.AdicionarItem(i);
+
+            registros.Remove(temaSelecionado);
+            registros.Add(temaEditado);
+        }
     }
 }

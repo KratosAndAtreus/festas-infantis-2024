@@ -12,7 +12,19 @@ namespace FestasInfantis.WinApp.ModuloTema
             {
                 txtId.Text = value.Id.ToString();
                 txtTitulo.Text = value.Titulo;
-               
+
+
+                int contadorItensSelecionados = 0;
+
+                for (int i = 0; i < listBoxItens.Items.Count; i++)
+                {
+                    Item item = (Item)listBoxItens.Items[i];
+
+                    if (value.itens.Contains(item))
+                        listBoxItens.SetItemChecked(contadorItensSelecionados, true);
+
+                    contadorItensSelecionados++;
+                }
             }
             get
             {
@@ -32,6 +44,18 @@ namespace FestasInfantis.WinApp.ModuloTema
                 return listBoxItens
                     .CheckedItems
                     .Cast<Item>()
+                    .ToList();
+            }
+        }
+
+        public List<Item> itensDesmarcados
+        {
+            get
+            {
+                return listBoxItens
+                    .Items
+                    .Cast<Item>()
+                    .Except(itensMarcados)
                     .ToList();
             }
         }

@@ -57,7 +57,6 @@ namespace FestasInfantis.WinApp.ModuloTema
 
         public override void Editar()
         {
-            
             TelaTemaForm telaTema = new TelaTemaForm();
 
             int idSelecionado = tabelaTema.ObterRegistroSelecionado();
@@ -76,6 +75,11 @@ namespace FestasInfantis.WinApp.ModuloTema
                 return;
             }
 
+
+            List<Item> itensDisponiveis = repositorioItem.SelecionarItensDisponiveis(temaSelecionado);
+
+            telaTema.CarregarItens(itensDisponiveis);
+
             telaTema.Tema = temaSelecionado;
 
             DialogResult resultado = telaTema.ShowDialog();
@@ -86,6 +90,8 @@ namespace FestasInfantis.WinApp.ModuloTema
             Tema temaEditado = telaTema.Tema;
 
             repositorioTema.Editar(temaSelecionado.Id, temaEditado);
+
+            repositorioTema.AdicionarItens(temaSelecionado,temaEditado, telaTema.itensMarcados, telaTema.itensDesmarcados);
 
             CarregarTemas();
 
